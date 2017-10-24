@@ -1,0 +1,61 @@
+<!--<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image data:</strong>
+  <%= @product.image_data %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> 
+<%= link_to 'Back', products_path %> -->
+
+<div class="modal fade" id="buy_confirm" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+        <!-- <p class="text-success text-center ">Thank you shopping, your order has been successfully placed.</p> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="fdb-block pb-0 pt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-10 col-sm-6 m-auto col-md-4 pb-4 pb-md-0">
+          <img src="<%= @product.image_url %>" class="img-fluid br-0">
+        </div>
+        <div class="col-12 ml-auto col-md-6 col-lg-5">
+          <h1><%= @product.name %></h1>
+          <p class="text-h3"><%= @product.description %></p>
+          <p class="text-h4 text-primary"> $ <%= @product.price %></p>
+          <%= render 'order', locals: { product: @product, order: @order } %>
+        </div>
+      </div>
+      <hr>
+
+      
+      <%= link_to 'Back', products_path, :class => 'mt-4' %>
+    </div>
+    
+</section>
+
+
+
